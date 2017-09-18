@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AngularJSProjeto</title>
+        <meta charset="utf-8">
+        <meta name="application-name" content="ProjectDesenWebJS">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js" type="application/javascript"></script>
+        <script src="JS/scopes.js" type="application/javascript"></script>
+        <link rel="stylesheet" href="CSS/app.css" type="text/css">
+        
+    </head>
+    <body ng-app="app">
+      <div ng-controller="myCtrl" class="container" class="well">
+          
+          <table ng-if="numeros.length > 0" class="table" >
+                 <thead>
+                    <th > nome  </th>   
+                    <th> E-mail  </th>   
+                    <th> CPF</th>   
+              </thead> 
+              <tbody>
+                <tr ng-repeat="numero in numeros" class="styles">
+                  <td>{{numero.nome}}</td>
+                  <td>{{numero.email}}</td>
+                  <td>{{numero.cpf}}</td>
+                  </tr>
+              </tbody>
+          </table>
+        <header>
+            <nav class="form-group">
+                <form name="formM">
+                <table  class="table">
+        
+                    <label> <th><h1>Cadastro de Usuário</h1></th> </label>
+                    <label><tr> <td> Nome: <input ng-blur ng-model="numero.nome" type=text class="form-control"></td> {{nome}}</tr></label>
+                   <label><tr> <td> E-mail: <input ng-blur ng-model="numero.email" ng-pattern="/^(?("")("".+?(?<!\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'*\+/=\?\^`\{\}\|~\w])*)?<=[0-9a-z])@))(?([)([(\d{1,3}\.){3}\d{1,3}])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[az0-9][\-a-z0-9]{0,22}[a-z0-9]))$/" type="email" required class="form-control"></td>{{email}}</tr></label>
+                    <label><tr> <td> CPF: <input ng-blur ng-model="numero.cpf" ng-pattern="/^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/" required type="text" class="form-control"></td>{{cpf}}</tr></label>
+                    
+                </table>
+                     <button ng-click="adiciona(numero, formM.$valid)" type="submit" class="btn btn-primary">Salvar</button>
+                
+                    </form>
+            </nav>
+            
+        </header>
+    </div>
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
