@@ -5,11 +5,9 @@ angular.module("app").controller("myCtrl", function ($scope) {
 
 
     $scope.adiciona = function (numero, formIsValid) {
-        if (formIsValid) {
+      
             $scope.numeros.push(angular.copy(numero));
-        } else {
-            alert('formulário inválido!');
-        }
+        
     };
 
 });
